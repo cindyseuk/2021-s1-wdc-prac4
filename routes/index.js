@@ -25,8 +25,6 @@ var count = 0;
 var colors= ['red', 'yellow', 'green', 'blue'];
 router.get('/color.html', function(req, res, next){
 
-
-
   if (count == 0){
      res.send(`<!DOCTYPE html>
         <html lang="en">
@@ -36,7 +34,6 @@ router.get('/color.html', function(req, res, next){
             </head>
             <body>
                 <h1 style="color:red">red </h1>
-
             </body>
         </html>`);
   }
@@ -97,23 +94,32 @@ router.get('/color.html', function(req, res, next){
 
             </body>
         </html>`);*/
-
-
 });
-/*
+
 //task 3-3
-router.get('log.html', function(req, res, next) {
+var visit=0;
+var dates = [];
+router.get('/log.html', function(req, res, next) {
 
   var timestamp = new Date();
-  res.send(`
-    text = "<ul>";
-    for (i = 0; i < fLen; i++) {
-      text += "<li>" + fruits[i] + "</li>";
-    }
-    text += "</ul>";
+  dates.push(String(timestamp));
+  var times="";
 
-    document.getElementById("demo").innerHTML = text;`);
+  for (var i=0; i<dates.length; i++){
+    times+= "<li>" + dates[i] + "</li>";
+  }
 
-}); */
+  res.send(`<!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <title>task3-2</title>
+            </head>
+            <body>
+                <ul>${times}</ul>
+            </body>
+        </html>`);
+
+});
 
 module.exports = router;
