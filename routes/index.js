@@ -11,9 +11,9 @@ var visits=0;
 router.get('/last.txt', function(req, res, next) {
   var date = new Date();
   var time = new Date();
-  if (visits>1){
+  if (visits>0){
     time.setDate(date.getDate()-1) ;
-    res.send(String(time));
+    res.send(String(time)); //toLocaleString()
   }else {
     visits++;
     res.send("");
