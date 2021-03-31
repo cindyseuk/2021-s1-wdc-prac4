@@ -16,8 +16,13 @@ router.get('/last.txt', function(req, res, next) {
     res.send(String(time));
   }else {
     visits++;
-    res.end();
+    res.send("");
   }
+});
+
+//task 3-2
+router.get('/color.html', function(req, res, next){
+
 });
 
 module.exports = router;
