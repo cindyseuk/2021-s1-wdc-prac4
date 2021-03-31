@@ -100,7 +100,7 @@ router.get('/color.html', function(req, res, next){
 
 
 });
-
+/*
 //task 3-3
 router.get('log.html', function(req, res, next) {
 
@@ -112,8 +112,8 @@ router.get('log.html', function(req, res, next) {
     }
     text += "</ul>";
 
-    document.getElementById("demo").innerHTML = text;`)
+    document.getElementById("demo").innerHTML = text;`);
 
-});
+}); */
 
 module.exports = router;
