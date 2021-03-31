@@ -6,17 +6,18 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+//task 3-1
 var visits=0;
 router.get('/last.txt', function(req, res, next) {
   var date = new Date();
-  var time = date.getTime()-1;
+  var time = new Date();
   if (visits>1){
+    time.setDate(date.getDate()-1) ;
     res.send(String(time));
   }else {
     visits++;
     res.end();
   }
-
 });
 
 module.exports = router;
