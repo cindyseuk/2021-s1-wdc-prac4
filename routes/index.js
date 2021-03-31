@@ -8,10 +8,13 @@ router.get('/', function(req, res, next) {
 
 var visits=0;
 router.get('/last.txt', function(req, res, next) {
-  visits++;
   var date = new Date();
+  var time = date.getTime()-1;
   if (visits>1){
-    res.send(String(date));
+    res.send(String(time));
+  }else {
+    visits++;
+    res.end();
   }
 
 });
