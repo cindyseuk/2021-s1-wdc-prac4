@@ -13,7 +13,7 @@ router.get('/last.txt', function(req, res, next) {
   var time = new Date();
   if (visits>0){
     time.setDate(date.getDate()-1) ;
-    res.send(String(time)); //toLocaleString()
+    res.send(String(time));
   }else {
     visits++;
     res.send("");
@@ -21,7 +21,98 @@ router.get('/last.txt', function(req, res, next) {
 });
 
 //task 3-2
+var count = 0;
+var colors= ['red', 'yellow', 'green', 'blue'];
 router.get('/color.html', function(req, res, next){
+
+
+
+  if (count == 0){
+     res.send(`<!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <title>task3-2</title>
+            </head>
+            <body>
+                <h1 style="color:red">red </h1>
+
+            </body>
+        </html>`);
+  }
+
+  if (count == 1){
+     res.send(`<!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <title>task3-2</title>
+            </head>
+            <body>
+                <h1 style="color:yellow"> yellow </h1>
+
+            </body>
+        </html>`);
+  }
+  if (count == 2){
+     res.send(`<!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <title>task3-2</title>
+            </head>
+            <body>
+                <h1 style="color:green"> green </h1>
+
+            </body>
+        </html>`);
+  }
+  if (count == 3){
+     res.send(`<!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <title>task3-2</title>
+            </head>
+            <body>
+                <h1 style="color:blue"> blue </h1>
+
+            </body>
+        </html>`);
+  }
+
+  count++;
+  if (count>3){
+    count =0;
+  }
+
+     /* res.send(`<!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <title>task3-2</title>
+            </head>
+            <body>
+                <h1 style=color:"${colors[i]}">${colors[i]} </h1>
+
+            </body>
+        </html>`);*/
+
+
+});
+
+//task 3-3
+router.get('log.html', function(req, res, next) {
+
+  var timestamp = new Date();
+  res.send(`
+    text = "<ul>";
+    for (i = 0; i < fLen; i++) {
+      text += "<li>" + fruits[i] + "</li>";
+    }
+    text += "</ul>";
+
+    document.getElementById("demo").innerHTML = text;`)
 
 });
 
