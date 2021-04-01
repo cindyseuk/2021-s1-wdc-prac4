@@ -97,7 +97,6 @@ router.get('/color.html', function(req, res, next){
 });
 
 //task 3-3
-var visit=0;
 var dates = [];
 router.get('/log.html', function(req, res, next) {
 
@@ -119,7 +118,9 @@ router.get('/log.html', function(req, res, next) {
                 <ul>${times}</ul>
             </body>
         </html>`);
-
 });
+
+//task 4-1
+
 
 module.exports = router;
