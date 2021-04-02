@@ -120,7 +120,31 @@ router.get('/log.html', function(req, res, next) {
         </html>`);
 });
 
-//task 4-1
+//task 4-2
+var count1=0;
+router.get('/color.txt', function(req, res, next) {
+
+while(count1<4){
+    res.send(`<!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <title>task3-2</title>
+            </head>
+            <body>
+                <p style="color:${colors[count1]}">${colors[count1]}</p>
+            </body>
+        </html>`);
+        count1++;
+
+}
+
+if (count1>3){
+    count1=0;
+}
+
+
+});
 
 
 module.exports = router;
