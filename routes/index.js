@@ -132,18 +132,15 @@ while(count1<4){
                 <title>task3-2</title>
             </head>
             <body>
-                <p style="color:${colors[count1]}">${colors[count1]}</p>
+                <h1 style="color:${colors[count1]}">${colors[count1]}</h1>
             </body>
         </html>`);
         count1++;
-
 }
 
 if (count1>3){
     count1=0;
 }
-
-
 });
 
 
