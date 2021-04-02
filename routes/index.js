@@ -135,7 +135,7 @@ while(count1<4){
                 <h1 style="color:${colors[count1]}">${colors[count1]}</h1>
             </body>
         </html>`);
-        count1++;
+     count1++;
 }
 
 if (count1>3){
