@@ -143,5 +143,25 @@ if (count1>3){
 }
 });
 
+//task 4-3
+const arr=[];
+router.get('/log.json', function(req, res, next) {
+
+  var timestamp = new Date();
+  arr.push(String(timestamp));
+
+  res.json(arr);
+});
+
+
+router.get('/log-ro.json', function(req, res, next) {
+
+  var timestamp = new Date();
+ // arr.push(String(timestamp));
+
+  res.json(arr);
+});
+
+
 
 module.exports = router;
