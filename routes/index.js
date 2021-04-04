@@ -124,6 +124,20 @@ router.get('/log.html', function(req, res, next) {
 var count1=0;
 router.get('/color.txt', function(req, res, next) {
 
+    if (count1%4==0){
+        res.send("red");
+    } else if (count1%4==1){
+        res.send("yellow");
+    } else if (count1%4==2){
+        res.send("green");
+    } else if (count1%4==3){
+        res.send("blue");
+    }
+
+    count1++;
+
+
+/*
 while(count1<4){
     res.send(`<!DOCTYPE html>
         <html lang="en">
@@ -132,7 +146,7 @@ while(count1<4){
                 <title>task3-2</title>
             </head>
             <body>
-                <h1 style="color:${colors[count1]}">${colors[count1]}</h1>
+                <h1 >${colors[count1]}</h1>
             </body>
         </html>`);
      count1++;
@@ -140,7 +154,7 @@ while(count1<4){
 
 if (count1>3){
     count1=0;
-}
+}*/
 });
 
 //task 4-3
@@ -150,7 +164,8 @@ router.get('/log.json', function(req, res, next) {
   var timestamp = new Date();
   arr.push(String(timestamp));
 
-  res.json(arr);
+  var toString = JSON.stringify(arr);
+  res.send(toString);
 });
 
 

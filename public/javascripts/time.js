@@ -23,6 +23,7 @@ function getColor(){
 
     xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("head").style.color =  this.responseText;
       document.getElementById("head").innerHTML =  this.responseText;
     }
   };
